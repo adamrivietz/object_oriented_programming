@@ -12,7 +12,7 @@ class Rover
 			@y += 1
 		elsif @direction == "S"
 			@y -= 1
-		elsif @direcion == "E"
+		elsif @direction == "E"
 			@x += 1
 		elsif @direction == "W"
 			@x -= 1
@@ -27,18 +27,17 @@ class Rover
 				@direction = "N"
 			elsif @direction == "S"
 				@direction = "E"
-			else @direction == "W"
+			elsif @direction == "W"
 				@direction = "S"
-			end
-		end		
-		if way == "R"
+			end	
+		elsif way == "R"
 			if @direction == "N"
 				@direction = "E"
 			elsif @direction == "E"
 				@direction = "S"
 			elsif @direction == "S"
 				@direction = "W"
-			else @direction == "W"
+			elsif @direction == "W"
 				@direction = "N"
 			end
 		end
@@ -48,18 +47,32 @@ end
 
 rover1 = Rover.new("Dude", 1, 2, "N")
 rover2 = Rover.new("Sweet", 3, 3, "E")
+
+rover1.turn("L")
 rover1.move
+rover1.turn("L")
+rover1.move
+rover1.turn("L")
+rover1.move
+rover1.turn("L")
+rover1.move
+rover1.move
+
+rover2.move
+rover2.move
+rover2.turn("R")
+rover2.move
+rover2.move
+rover2.turn("R")
+rover2.move
+rover2.turn("R")
+rover2.turn("R")
+rover2.move
 
 puts rover1.x
 puts rover1.y
+puts rover1.direction
 
-#position
-#location
-#combination x/y
-#NESW
-
-# LRM
-# L = 90
-# R = 90
-# M = forward 1 point
-
+puts rover2.x
+puts rover2.y
+puts rover2.direction
